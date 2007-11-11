@@ -14,6 +14,9 @@
 #endif
 
 struct mercy_context {
+	unsigned short rows;
+	unsigned short cols;
+
 	char raw[_MERCY_BUFSIZE];
 	buffer buf;
 };
@@ -26,6 +29,9 @@ int mercy_init(struct mercy_context *);
 int mercy_free(struct mercy_context *);
 
 int mercy_clear(struct mercy_context *);
+
+int mercy_seek(struct mercy_context *, unsigned short, unsigned short);
+int mercy_seek_col(struct mercy_context *, unsigned short);
 
 int mercy_write(struct mercy_context *, const char *);
 int mercy_writen(struct mercy_context *, const char *, size_t);
