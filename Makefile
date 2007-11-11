@@ -1,17 +1,23 @@
-CFLAGS ?= -Os -fomit-frame-pointer
+include config.mk
+
 CFLAGS += -std=c99 -D_POSIX_C_SOURCE=200112L
 CFLAGS += -Wall -Wno-unused-parameter
-LDFLAGS += -shared -lowfat
 
-SRC = mercy.c
+SRC = flush.c free.c init.c
+OBJ = ${SRC:.c=.o}
 
 all: libmercy.a
 
-libmercy.a: ${SRC}
-	${CC} ${CFLAGS} ${LDFLAGS} -c ${SRC}
+.c.o:
+	@echo "  CC $<"
+	@${CC} ${CPPFLAGS} ${CFLAGS} -c $<
+
+libmercy.a: ${OBJ}
+	@echo "  AR $@"
+	@${AR} rc $@ ${OBJ}
 
 clean:
-	${RM} *.o libmercy.so
+	${RM} ${OBJ} libmercy.a
 
 
 .PHONY: all clean
