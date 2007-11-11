@@ -4,12 +4,17 @@
 #include <sys/types.h>
 #include <buffer.h>
 
-#ifndef BUFSIZE
-#define BUFSIZE 512
+#ifndef _MERCY_ESCAPE
+#define _MERCY_ESCAPE "\x1B["
+/* #define _MERCY_ESCAPE "\x9B" */
+#endif
+
+#ifndef _MERCY_BUFSIZE
+#define _MERCY_BUFSIZE 512
 #endif
 
 struct mercy_context {
-	char raw[BUFSIZE];
+	char raw[_MERCY_BUFSIZE];
 	buffer buf;
 };
 

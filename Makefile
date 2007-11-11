@@ -3,7 +3,7 @@ include config.mk
 CFLAGS += -std=c99 -D_POSIX_C_SOURCE=200112L
 CFLAGS += -Wall -Wno-unused-parameter
 
-SRC = flush.c free.c init.c
+SRC = clear.c flush.c free.c init.c
 OBJ = ${SRC:.c=.o}
 
 all: libmercy.a
