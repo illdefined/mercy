@@ -13,28 +13,28 @@
 #define _MERCY_BUFSIZE 512
 #endif
 
-struct mercy_context {
+extern struct _mercy_context {
 	unsigned short rows;
 	unsigned short cols;
 
 	char raw[_MERCY_BUFSIZE];
 	buffer buf;
-};
+} mercy_context;
 
 struct mercy_attr {
 
 };
 
-int mercy_init(struct mercy_context *);
-int mercy_free(struct mercy_context *);
+int mercy_init();
+int mercy_free();
 
-int mercy_clear(struct mercy_context *);
+int mercy_clear();
 
-int mercy_seek(struct mercy_context *, unsigned short, unsigned short);
-int mercy_seek_col(struct mercy_context *, unsigned short);
+int mercy_seek(unsigned short, unsigned short);
+int mercy_seek_col(unsigned short);
 
-int mercy_write(struct mercy_context *, const char *);
-int mercy_writen(struct mercy_context *, const char *, size_t);
-int mercy_flush(struct mercy_context *);
+int mercy_write(const char *);
+int mercy_writen(const char *, size_t);
+int mercy_flush();
 
 #endif

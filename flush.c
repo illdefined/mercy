@@ -1,5 +1,5 @@
 #include "mercy.h"
 
-int mercy_flush(struct mercy_context *ctx) {
-	return buffer_flush(&ctx->buf);
+int mercy_flush() {
+	return buffer_flush(&mercy_context.buf);
 }
