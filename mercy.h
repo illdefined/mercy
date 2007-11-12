@@ -25,9 +25,6 @@ struct mercy_attr {
 
 };
 
-int mercy_init();
-int mercy_free();
-
 int mercy_resize();
 
 int mercy_clear();
