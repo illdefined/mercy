@@ -38,6 +38,8 @@ int mercy_move_up(unsigned short);
 int mercy_move_down(unsigned short);
 int mercy_move_forw(unsigned short);
 int mercy_move_back(unsigned short);
+int mercy_lines_up(unsigned short);
+int mercy_lines_down(unsigned short);
 
 int mercy_write(const char *);
 int mercy_writen(const char *, size_t);
