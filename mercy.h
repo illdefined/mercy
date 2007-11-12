@@ -31,6 +31,7 @@ int mercy_free();
 int mercy_resize();
 
 int mercy_clear();
+int mercy_clear_line();
 
 int mercy_seek(unsigned short, unsigned short);
 int mercy_seek_col(unsigned short);
