@@ -41,6 +41,7 @@ int mercy_lines_down(unsigned short);
 
 int mercy_write(const char *);
 int mercy_writen(const char *, size_t);
+int mercy_write_long(long integer);
 int mercy_flush();
 
 #endif

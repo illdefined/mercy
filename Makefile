@@ -8,7 +8,7 @@ SRC += seek.c seek_col.c
 SRC += move_up.c move_down.c move_forw.c move_back.c
 SRC += lines_up.c lines_down.c
 SRC += clear.c clear_line.c
-SRC += flush.c write.c writen.c
+SRC += flush.c write.c writen.c write_long.c
 OBJ = ${SRC:.c=.o}
 
 all: libmercy.a

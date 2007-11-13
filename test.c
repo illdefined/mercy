@@ -20,6 +20,7 @@ int main(int argc, char *argv[]) {
 	mercy_flush();
 	sleep(1);
 	mercy_clear_line();
+	mercy_write_long(-64l);
 	mercy_flush();
 	sleep(2);
 	mercy_clear();
