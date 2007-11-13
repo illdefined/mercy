@@ -1,6 +1,6 @@
 #include "mercy.h"
 
-int mercy_seek_col(unsigned short col) {
+int mercy_aseek_col(unsigned short col) {
 	if (col >= mercy_context.cols)
 		return -1;
 

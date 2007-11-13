@@ -30,14 +30,10 @@ int mercy_resize();
 int mercy_clear();
 int mercy_clear_line();
 
-int mercy_seek(unsigned short, unsigned short);
-int mercy_seek_col(unsigned short);
-int mercy_move_up(unsigned short);
-int mercy_move_down(unsigned short);
-int mercy_move_forw(unsigned short);
-int mercy_move_back(unsigned short);
-int mercy_lines_up(unsigned short);
-int mercy_lines_down(unsigned short);
+int mercy_aseek(unsigned short, unsigned short);
+int mercy_aseek_col(unsigned short);
+int mercy_rseek_row(signed short);
+int mercy_rseek_col(signed short);
 
 int mercy_write(const char *);
 int mercy_writen(const char *, size_t);
