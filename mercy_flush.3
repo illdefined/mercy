@@ -1,0 +1,14 @@
+.TH mercy_flush 3
+.SH NAME
+mercy_flush \- flush output buffer
+.SH SYNTAX
+.B #include <mercy.h>
+
+int \fBmercy_flush\fP(\fR);
+.SH DESCRIPTION
+mercy_flush flushes the output buffer to the terminal.
+
+It returns 0, if it succeeds or any other value on failure, setting \fIerrno\fR
+appropriately.
+.SH "SEE ALSO"
+mercy(3)
