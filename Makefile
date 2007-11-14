@@ -6,7 +6,6 @@ CFLAGS += -Wall -Wno-unused-parameter
 SRC = mercy.c resize.c
 SRC += aseek.c aseek_col.c rseek_row.c rseek_col.c
 SRC += clear.c clear_line.c
-SRC += flush.c write.c writen.c write_long.c
 OBJ = ${SRC:.c=.o}
 
 all: libmercy.a

@@ -1,19 +1,11 @@
+#include <stdlib.h>
+
 #include "mercy.h"
 
-int mercy_move_down(unsigned short cells) {
-	if (buffer_puts(&mercy_context.buf, _MERCY_ESCAPE) ||
-		buffer_putulong(&mercy_context.buf, cells) ||
-		buffer_put(&mercy_context.buf, "B", 1))
-		return -1;
-
-	return 0;
-}
-#include "mercy.h"
-
-int mercy_move_up(unsigned short cells) {
-	if (buffer_puts(&mercy_context.buf, _MERCY_ESCAPE) ||
-		buffer_putulong(&mercy_context.buf, cells) ||
-		buffer_put(&mercy_context.buf, "A", 1))
+int mercy_rseek_row(signed short cells) {
+	if (buffer_puts(buffer_1, _MERCY_ESCAPE) ||
+		buffer_putulong(buffer_1, abs(cells)) ||
+		buffer_put(buffer_1, cells < 0 ? "A" : "B", 1))
 		return -1;
 
 	return 0;
