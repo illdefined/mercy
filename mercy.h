@@ -57,6 +57,9 @@ int mercy_aseek_col(unsigned short);
 int mercy_rseek_row(signed short);
 int mercy_rseek_col(signed short);
 
+int mercy_cursor_show();
+int mercy_cursor_hide();
+
 int mercy_font(unsigned char);
 int mercy_colour_fg(unsigned char);
 int mercy_colour_bg(unsigned char);

@@ -3,6 +3,7 @@ include config.mk
 SRC = mercy.c resize.c
 SRC += aseek.c aseek_col.c rseek_row.c rseek_col.c
 SRC += clear.c clear_line.c
+SRC += cursor_show.c cursor_hide.c
 SRC += font.c colour_fg.c colour_bg.c
 OBJ = ${SRC:.c=.o}
 
