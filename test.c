@@ -5,6 +5,9 @@
 int main(int argc, char *argv[]) {
 	mercy_resize();
 	mercy_clear();
+	mercy_font(MERCY_BOLD);
+	mercy_colour_fg(MERCY_YELLOW);
+	mercy_colour_bg(MERCY_BLUE);
 	mercy_aseek(16, 16);
 	mercy_puts("Hello world!\n");
 	mercy_flush();

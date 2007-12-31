@@ -10,6 +10,19 @@
 /* #define _MERCY_ESCAPE "\x9B" */
 #endif
 
+#define MERCY_BLACK		0
+#define MERCY_RED		1
+#define MERCY_GREEN		2
+#define MERCY_YELLOW	3
+#define MERCY_BLUE		4
+#define MERCY_CYAN		5
+#define MERCY_MAGENTA	6
+#define MERCY_WHITE		7
+#define MERCY_RESET		9
+
+#define MERCY_NORMAL	0
+#define MERCY_BOLD		1
+
 /* Zero-cost convenience macros */
 #define mercy_flush()				buffer_flush(buffer_1)
 #define mercy_put(str, len)			buffer_put(buffer_1, str, len)
@@ -34,10 +47,6 @@ extern struct _mercy_context {
 	unsigned short cols;
 } mercy_context;
 
-struct mercy_attr {
-
-};
-
 int mercy_resize();
 
 int mercy_clear();
@@ -47,5 +56,9 @@ int mercy_aseek(unsigned short, unsigned short);
 int mercy_aseek_col(unsigned short);
 int mercy_rseek_row(signed short);
 int mercy_rseek_col(signed short);
+
+int mercy_font(unsigned char);
+int mercy_colour_fg(unsigned char);
+int mercy_colour_bg(unsigned char);
 
 #endif

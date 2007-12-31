@@ -1,18 +1,16 @@
 include config.mk
 
-CFLAGS += -std=c99 -D_POSIX_C_SOURCE=200112L
-CFLAGS += -Wall -Wno-unused-parameter
-
 SRC = mercy.c resize.c
 SRC += aseek.c aseek_col.c rseek_row.c rseek_col.c
 SRC += clear.c clear_line.c
+SRC += font.c colour_fg.c colour_bg.c
 OBJ = ${SRC:.c=.o}
 
 all: libmercy.a
 
 .c.o:
 	@echo "  CC $<"
-	@${CC} ${CPPFLAGS} ${CFLAGS} -c $<
+	@${CC} ${CFLAGS} -c $<
 
 libmercy.a: ${OBJ}
 	@echo "  AR $@"
