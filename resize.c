@@ -6,7 +6,6 @@
 int mercy_resize() {
 	struct winsize ws;
 
-	/* FIXME: Is this really portable? */
 	if (ioctl(1, TIOCGWINSZ, &ws))
 		return -1;
 

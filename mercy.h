@@ -1,8 +1,11 @@
 #ifndef _MERCY_H_
 #define _MERCY_H_
 
-#include <sys/types.h>
 #include <stdarg.h>
+
+#include <sys/types.h>
+#include <termios.h>
+
 #include <buffer.h>
 
 #ifndef _MERCY_ESCAPE
@@ -42,6 +45,8 @@
 #define mercy_putulonglong(num)		buffer_putulonglong(buffer_1, num)
 #define mercy_putxlong(num)			buffer_putxlong(buffer_1, num)
 
+#define mercy_drain()				tcdrain(1);
+
 extern struct _mercy_context {
 	unsigned short rows;
 	unsigned short cols;
@@ -52,10 +57,10 @@ int mercy_resize();
 int mercy_clear();
 int mercy_clear_line();
 
-int mercy_aseek(unsigned short, unsigned short);
-int mercy_aseek_col(unsigned short);
-int mercy_rseek_row(signed short);
-int mercy_rseek_col(signed short);
+int mercy_seek_abs(unsigned short, unsigned short);
+int mercy_seek_col_abs(unsigned short);
+int mercy_seek_row_rel(signed short);
+int mercy_seek_col_rel(signed short);
 
 int mercy_cursor_show();
 int mercy_cursor_hide();

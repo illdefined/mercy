@@ -1,0 +1,15 @@
+.TH mercy_flush 3
+.SH NAME
+mercy_drain \- wait until output is drained
+.SH SYNTAX
+.B #include <mercy.h>
+
+int \fBmercy_drain\fP(\fR);
+.SH DESCRIPTION
+mercy_drain waits until all output is drained to the terminal. Remember that it
+does no implicit buffer flush.
+
+It returns 0, if it succeeds or any other value on failure, setting \fIerrno\fR
+appropriately.
+.SH "SEE ALSO"
+mercy(3), mercy_flush(3)

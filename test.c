@@ -30,6 +30,7 @@ int main(int argc, char *argv[]) {
 	sleep(2);
 	mercy_clear();
 	mercy_flush();
+	mercy_drain();
 
 	return 0;
 }
