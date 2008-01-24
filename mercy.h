@@ -58,9 +58,7 @@ int mercy_clear();
 int mercy_clear_line();
 
 int mercy_seek_abs(unsigned short, unsigned short);
-int mercy_seek_col_abs(unsigned short);
-int mercy_seek_row_rel(signed short);
-int mercy_seek_col_rel(signed short);
+int mercy_seek_rel(signed short, signed short);
 
 int mercy_cursor_show();
 int mercy_cursor_hide();
