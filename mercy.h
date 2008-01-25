@@ -26,6 +26,16 @@
 #define MERCY_NORMAL	0
 #define MERCY_BOLD		1
 
+#define MERCY_RAW		0
+#define MERCY_CANON		ICANON
+
+#define MERCY_NOECHO	0
+#define MERCY_ECHO		ECHO
+#define MERCY_ECHOE		ECHOE
+#define MERCY_ECHOK		ECHOK
+#define MERCY_ECHONL	ECHONL
+#define MERCY_SIGNAL	ISIG
+
 /* Zero-cost convenience macros */
 #define mercy_flush()				buffer_flush(buffer_1)
 #define mercy_put(str, len)			buffer_put(buffer_1, str, len)
@@ -66,5 +76,8 @@ int mercy_cursor_hide();
 int mercy_font(unsigned char);
 int mercy_colour_fg(unsigned char);
 int mercy_colour_bg(unsigned char);
+
+int mercy_input_mode(int);
+int mercy_input_rawattr(unsigned int, unsigned int);
 
 #endif
