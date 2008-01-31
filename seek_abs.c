@@ -5,7 +5,7 @@ int mercy_seek_abs(unsigned short row, unsigned short col) {
 		col >= mercy_context.cols)
 		return -1;
 
-	if (buffer_puts(buffer_1, _MERCY_ESCAPE) ||
+	if (buffer_puts(buffer_1, MERCY_ESCAPE) ||
 		buffer_putulong(buffer_1, row + 1) ||
 		buffer_put(buffer_1, ";", 1) ||
 		buffer_putulong(buffer_1, col + 1) ||

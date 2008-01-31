@@ -1,5 +1,5 @@
-#ifndef _MERCY_H_
-#define _MERCY_H_
+#ifndef MERCY_H
+#define MERCY_H
 
 #include <stdarg.h>
 
@@ -8,9 +8,9 @@
 
 #include <buffer.h>
 
-#ifndef _MERCY_ESCAPE
-#define _MERCY_ESCAPE "\x1B["
-/* #define _MERCY_ESCAPE "\x9B" */
+#ifndef MERCY_ESCAPE
+#define MERCY_ESCAPE "\x1B["
+/* #define MERCY_ESCAPE "\x9B" */
 #endif
 
 #define MERCY_BLACK		0
@@ -27,14 +27,13 @@
 #define MERCY_BOLD		1
 
 #define MERCY_RAW		0
-#define MERCY_CANON		ICANON
+#define MERCY_CANON		(ICANON | ISIG | IEXTEN)
 
 #define MERCY_NOECHO	0
 #define MERCY_ECHO		ECHO
 #define MERCY_ECHOE		ECHOE
 #define MERCY_ECHOK		ECHOK
 #define MERCY_ECHONL	ECHONL
-#define MERCY_SIGNAL	ISIG
 
 /* Zero-cost convenience macros */
 #define mercy_flush()				buffer_flush(buffer_1)
@@ -55,9 +54,13 @@
 #define mercy_putulonglong(num)		buffer_putulonglong(buffer_1, num)
 #define mercy_putxlong(num)			buffer_putxlong(buffer_1, num)
 
+#define mercy_get(buf, len)			buffer_get(buffer_0, buf, len)
+#define mercy_getline(buf, len)		buffer_getline(buffer_0, buf, len)
+#define mercy_getchar(chr)			buffer_get(buffer_0, chr, 1)
+
 #define mercy_drain()				tcdrain(1);
 
-extern struct _mercy_context {
+extern struct mercy_context {
 	unsigned short rows;
 	unsigned short cols;
 } mercy_context;
