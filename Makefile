@@ -16,7 +16,7 @@ all: libmercy.a
 
 libmercy.a: ${OBJ}
 	@echo "  AR $@"
-	@${AR} rc $@ ${OBJ}
+	@${AR} rc $@ $^
 
 clean:
 	${RM} ${OBJ} libmercy.a
